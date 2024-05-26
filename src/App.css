@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  padding: 2rem 0;
+  box-sizing: border-box;
+  background-color: var(--color-bg);
+}
+
+:root {
+  --color-bg: #e9f2f2;
+}
