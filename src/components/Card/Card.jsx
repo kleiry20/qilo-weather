@@ -2,39 +2,25 @@ import "./Card.css";
 import PropTypes from "prop-types";
 
 const Card = (props) => {
-  const { item, currentWeatherData, weeklyData, isWeekly, isDaily } = props;
-  //   console.log('item', item)
+  const { title, value } = props;
   return (
     <>
-      {isWeekly && (
-        <div className="card">
-          {/* <h3>{weeklyData.title}</h3> */}
-          <p>weekly data</p>
-        </div>
-      )}
-
-      {isDaily && (
-        <div className="card">
-          {/* <h3>{currentWeatherData.title}</h3> */}
-          <p>daily data</p>
-        </div>
-      )}
+      <div className="card">
+        <h3>{title}</h3>
+        <p>{value}</p>
+      </div>
     </>
   );
 };
 
 // Card.propTypes = {
-//   item: PropTypes.objectOf(
-//     PropTypes.shape({
-//       title: PropTypes.string,
-//     })
-//   ),
+//   title: PropTypes.string,
+//   value: PropTypes.number || PropTypes.string,
 // };
 
 // Card.defaultProps = {
-//   item: {
-//     title: "Card Name",
-//   },
+//   title: "Title",
+//   value: 0 || '0',
 // };
 
 export default Card;

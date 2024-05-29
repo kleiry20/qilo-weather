@@ -22,6 +22,7 @@ const SearchBar = (props) => {
     }, 1000);
 
     setTimerId(newTimerId);
+    
   };
 
   return (
