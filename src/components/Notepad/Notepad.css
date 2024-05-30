@@ -1,15 +1,15 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 1rem 9rem;
   align-items: center;
   font-size: 18px;
 
   /* background-color: cadetblue; */
   /* background-color: var(--color-med-darkblue);
   color: var(--color-darkblue); */
-  background-color: var(--color-midpurple);
-  color: var(--color-darkpurple);
+  /* background-color: var(--color-mid-blue); */
+  /* color: var(--color-darkpurple); */
 }
 
 .contact {
@@ -20,7 +20,7 @@
 
 a {
   /* color: var(--color-darkblue); */
-  color: var(--color-darkpurple);
+  /* color: var(--color-darkpurple); */
 }
 
 .notepad {
@@ -31,5 +31,36 @@ a {
 
   /* background-color: var(--color-lightblue);
   color: var(--color-darkblue); */
-  background-color: var(--color-lightpurple);
+}
+
+.content {
+  display: flex;
+  gap: 1rem;
+}
+.songs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid;
+  height: 20rem;
+  width: 30rem;
+}
+.playlist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid;
+  height: 20rem;
+  width: 30rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.list-item {
+  display: flex;
+  gap: 1rem;
 }
