@@ -1,8 +1,28 @@
 .card {
-  border: 1px solid green;
-  height: 20rem;
-  width: 20rem;
+  background-color: var(--color-secondary);
+  height: 18rem;
+  width: 16rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  padding: 0 2rem;
+  /* transition: transform 0.3s linear; */
+}
+
+/* .card:hover {
+  transform: scale(1.1);
+} */
+
+.card-title {
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.card-value {
+  font-size: 20px;
+  font-weight: 300;
 }

@@ -2,12 +2,21 @@ import "./Card.css";
 import PropTypes from "prop-types";
 
 const Card = (props) => {
-  const { title, value } = props;
+  const { title, value, currentWeatherData } = props;
   return (
     <>
       <div className="card">
-        <h3>{title}</h3>
-        <p>{value}</p>
+        <h3 className="card-title">{title}</h3>
+        <p className="card-value">{value}</p>
+        {/* {currentWeatherData ? (
+          <img
+            className="current-weather-icon"
+            src={`https://openweathermap.org/img/wn/10d@2x.png`}
+            alt="weatherIcon"
+          />
+        ) : (
+          ""
+        )} */}
       </div>
     </>
   );

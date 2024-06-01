@@ -19,10 +19,14 @@ function App() {
   return (
     <Router>
       {/* <WeatherDashboard city={city} setCity={setCity} apiKey={apiKey} /> */}
-     
 
       <Routes>
-        <Route path="/" element={<WeatherDashboard />} />
+        <Route
+          path="/"
+          element={
+            <WeatherDashboard city={city} setCity={setCity} apiKey={apiKey} />
+          }
+        />
         <Route path="/notepad" element={<Notepad />} />
       </Routes>
     </Router>

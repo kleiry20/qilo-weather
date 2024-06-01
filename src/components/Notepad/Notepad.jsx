@@ -14,21 +14,22 @@ const Notepad = () => {
   //   { id: 1, songname: "Laado" }
 
   function addToPlaylist(id) {
-    // let size = playlist.length;
-    // console.log(size, "size hu main");
-    // const selectedSong = songList.find((id) => id === songList.id);
-    // setPlaylist([...playlist, { id: size + 1, songname: selectedSong }]);
-
     const selectedSong = songList.find((song) => song.id === id);
-    console.log("sel song", selectedSong);
+    // console.log("sel song", selectedSong);
     if (selectedSong) {
-      setPlaylist([...playlist, [{ id: 1, songname: selectedSong }]]);
+      setPlaylist([...playlist, selectedSong]);
       setSongList((prevSongList) =>
         prevSongList.filter((song) => song.id !== id)
       );
     }
 
-    console.log("playlist", playlist);
+    // console.log("playlist", playlist);
+  }
+
+  function deleteFromPlaylist(id) {
+    console.log("id", id);
+    const songToDelete = playlist.filter((song) => song.id === id);
+    console.log("songtodel", songToDelete);
   }
 
   return (
@@ -44,7 +45,7 @@ const Notepad = () => {
                 return (
                   <div key={song.id} className="list-item">
                     <li>{song.songname}</li>
-                    <button>del</button>
+                    {/* <button>del</button> */}
                     <button onClick={() => addToPlaylist(song.id)}>add</button>
                   </div>
                 );
@@ -60,7 +61,9 @@ const Notepad = () => {
                   return (
                     <div key={song.id} className="list-item">
                       <li>{song.songname}</li>
-                      <button>del</button>
+                      <button onClick={() => deleteFromPlaylist(song.id)}>
+                        del
+                      </button>
                       {/* <button onClick={() => addToPlaylist(song.id)}>
                         add
                       </button> */}

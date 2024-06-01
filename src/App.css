@@ -1,23 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: var(--font-montserrat);
-  /* background-color: var(--color-bg); */
-  /* background-color: var(--color-lightblue); */
-
-  /* background-color: var(--color-midpurple); */
-  /* background-color: var(--color-dark-blue); */
-  /* color: var(--color-whitesmoke); */
+  background-color: var(--color-bg);
+  color: var(--color-text3);
+  /* cursor: url("https://fav.farm/🌞") 3 0, auto; */
 }
 
 :root {
   --color-bg: #e9f2f2;
   /* shades of blue */
-  --color-dark-blue: #27374D;
-  --color-mid-blue: #526D82;
+  --color-dark-blue: #27374d;
+  --color-mid-blue: #526d82;
   --color-whitesmoke: #eef7ff;
   --color-light-blue: #9bbec8;
 
@@ -25,6 +22,14 @@ body {
   --color-darkpurple: #352f44;
   --color-midpurple: #5c5470;
   --color-lightpurple: #b9b4c7;
+
+  /*  */
+  --color-bg: #0c131e;
+  --color-secondary: #202b3b;
+  --color-text1: #f0f1f1;
+  --color-text2: #dde0e4;
+  --color-text3: #c4cad3;
+  --color-gray: #9399a2;
 
   --font-montserrat: "Montserrat", sans-serif;
 }
