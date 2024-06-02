@@ -1,0 +1,20 @@
+.day-info {
+  /* margin: 0 1rem; */
+  margin: 1rem 0;
+  width: 40%;
+}
+.day-div {
+  display: flex;
+  /* justify-content: center; */
+  justify-content: space-around;
+  gap: 2rem;
+}
+.day-text {
+  letter-spacing: 2px;
+  font-family: var(--font-poppins);
+}
+
+.qouteText {
+  font-weight: 100;
+  letter-spacing: 0.5px;
+}

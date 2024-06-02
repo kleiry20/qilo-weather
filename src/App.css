@@ -7,7 +7,6 @@ body {
   font-family: var(--font-montserrat);
   background-color: var(--color-bg);
   color: var(--color-text3);
-  /* cursor: url("https://fav.farm/🌞") 3 0, auto; */
 }
 
 :root {
@@ -18,11 +17,6 @@ body {
   --color-whitesmoke: #eef7ff;
   --color-light-blue: #9bbec8;
 
-  /* shades of purple */
-  --color-darkpurple: #352f44;
-  --color-midpurple: #5c5470;
-  --color-lightpurple: #b9b4c7;
-
   /*  */
   --color-bg: #0c131e;
   --color-secondary: #202b3b;
@@ -32,4 +26,16 @@ body {
   --color-gray: #9399a2;
 
   --font-montserrat: "Montserrat", sans-serif;
+}
+
+@keyframes rotate {
+  100% {
+    transform: scale(1.2) rotate(360deg);
+  }
+}
+.rotate {
+  animation-name: rotate;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
 }

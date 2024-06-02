@@ -1,9 +1,7 @@
-import React from 'react'
-
 const ErrorComponent = () => {
   return (
-    <div>ErrorComponent</div>
-  )
-}
+    <p style={{ color: "red" }}>Oops! City not found, please try again.</p>
+  );
+};
 
-export default ErrorComponent
+export default ErrorComponent;

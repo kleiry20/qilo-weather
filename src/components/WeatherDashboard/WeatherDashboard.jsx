@@ -4,12 +4,17 @@ import Card from "../Card/Card";
 
 import SearchBar from "../SearchBar/SearchBar";
 import ErrorComponent from "../ErrorComponent/ErrorComponent";
+import MinMaxTemp from "../MinMaxTemp/MinMaxTemp";
+import Quote from "../Quote/Quote";
+import BarChart from "../BarChart/BarChart";
+import { FaHeart } from "react-icons/fa";
 
 const WeatherDashboard = (props) => {
   const { city, setCity, apiKey } = props;
 
   const [currentWeatherData, setCurrentWeatherData] = useState(null);
   const [weeklyData, setWeeklyData] = useState(null);
+  const [data, setData] = useState();
 
   const current_weather_url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   const average_weather_url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=7&appid=${apiKey}`;
@@ -23,7 +28,6 @@ const WeatherDashboard = (props) => {
         if (response.cod === "404") {
           setCurrentWeatherData(null);
         } else {
-          console.log("response.weather[0]", response.weather[0]);
           const result = {
             place: response.name,
             weather: response.weather[0],
@@ -36,6 +40,7 @@ const WeatherDashboard = (props) => {
             icon: response.weather[0].icon,
             description: response.weather[0].main,
           };
+          setData(response);
           setCurrentWeatherData(result);
         }
       } catch (error) {
@@ -99,7 +104,7 @@ const WeatherDashboard = (props) => {
         <h2
           style={{ display: "flex", alignItems: "center", fontWeight: "300" }}
         >
-          <i className="icon-style">🌍</i>
+          <i className="icon-style rotate">🌍</i>
           Weather App
         </h2>
         <a href="/notepad">Go to Notepad</a>
@@ -123,48 +128,66 @@ const WeatherDashboard = (props) => {
                 />
               </div>
             </div>
-            {/* <p>{currentWeatherData.description}</p> */}
+
+            {/* card row */}
+            <div className="weather-row2">
+              {weeklyData != null && currentWeatherData != null ? (
+                <>
+                  <Card
+                    title="Weekly Average Temp"
+                    value={`${weeklyData.avgTemp} \u00b0 C`}
+                  />
+                  <Card
+                    title="Weekly Average Rainfall"
+                    value={`${weeklyData.avgRainfall} mm`}
+                  />
+
+                  <Card
+                    title="Weekly Average Humidity"
+                    value={`${weeklyData.avgHumidity} %`}
+                  />
+                  <Card
+                    title="Current Temperature"
+                    value={`${currentWeatherData.currTemp} \u00b0 C`}
+                  />
+                </>
+              ) : (
+                <ErrorComponent />
+              )}
+            </div>
+
+            <div className="extra-info">
+              {/* temp throughout the day */}
+              <div className="child-card-temp-div">
+                <h4 className="child-card--title">Weather Forecast</h4>
+                <div className="child-temp-data">
+                  <MinMaxTemp city={city} apiKey={apiKey} data={data} />
+                </div>
+              </div>
+
+              {/* Quote */}
+              <Quote />
+            </div>
+
+            {/* Bar Chart */}
+            <BarChart apiKey={apiKey} city={city} />
+
+            {/* footer */}
+            <p className="love">
+              Made with <FaHeart style={{ color: "#9b2323" }} /> by{" "}
+              <a href="https://github.com/kleiry20" target="_blank">
+                Anushka
+              </a>
+            </p>
           </div>
         ) : (
-          <>
+          <div className="search-div">
             <SearchBar city={"Delhi"} setCity={setCity} />
-            <p>Invalid city name, please try again!</p>
-          </>
+            <p style={{ textAlign: "center" }}>
+              Invalid city name, please try again!
+            </p>
+          </div>
         )}
-
-        <div className="weather-row">
-          {weeklyData != null && currentWeatherData != null ? (
-            <>
-              <div className="weather-cards">
-                <Card
-                  currentWeatherData={currentWeatherData}
-                  title="Weekly Average Temp"
-                  value={`${weeklyData.avgTemp} \u00b0 C`}
-                />
-                <Card
-                  // currentWeatherData={currentWeatherData}
-                  title="Weekly Average Rainfall"
-                  value={`${weeklyData.avgRainfall} mm`}
-                />
-              </div>
-              <div>
-                {" "}
-                <Card
-                  currentWeatherData={currentWeatherData}
-                  title="Weekly Average Humidity"
-                  value={`${weeklyData.avgHumidity} %`}
-                />
-                <Card
-                  currentWeatherData={currentWeatherData}
-                  title="Current Temperature"
-                  value={`${currentWeatherData.currTemp} \u00b0 C`}
-                />
-              </div>
-            </>
-          ) : (
-            <ErrorComponent />
-          )}
-        </div>
       </div>
     </div>
   );

@@ -22,14 +22,13 @@ const SearchBar = (props) => {
     }, 1000);
 
     setTimerId(newTimerId);
-    
   };
 
   return (
     <>
       <input
         type="text"
-        placeholder="Search for cities"
+        placeholder="Search a city..."
         className="searchBar"
         id="searchText"
         name={city}
