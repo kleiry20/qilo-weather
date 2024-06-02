@@ -6,15 +6,14 @@ import { FaHeart } from "react-icons/fa";
 
 const Notepad = () => {
   const [songList, setSongList] = useState([
-    { id: 1, songname: "Ishq Nachawe" },
-    { id: 2, songname: "Kinni Kinni" },
-    { id: 3, songname: "One Love" },
+    { id: 1, songname: "Kinni Kinni" },
+    { id: 2, songname: "One Love" },
+    { id: 3, songname: "Ishq Nachawe" },
     { id: 4, songname: "Espresso" },
     { id: 5, songname: "Shinunoga E-Wa" },
   ]);
 
   const [playlist, setPlaylist] = useState([
-    // { id: 1, songname: "Somewhere Only We Know" },
   ]);
 
   const [newSong, setNewSong] = useState({
@@ -141,8 +140,10 @@ const Header = () => {
     <div className="header">
       <p>Anushka Singh</p>
       <div className="contact">
-        <a href="mailto:anushkasingh801@gmail.com">Mail</a>
-        <a href="tel:+918707319547">Contact No</a>
+        {/* <a href="mailto:anushkasingh801@gmail.com">Mail</a>
+        <a href="tel:+918707319547">Contact No</a> */}
+        <p>anushkasingh801@gmail.com</p>
+        <p>+91 8707 319 547</p>
         <a href="/">Home</a>
       </div>
     </div>

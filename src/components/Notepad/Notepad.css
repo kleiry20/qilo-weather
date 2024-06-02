@@ -1,11 +1,13 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 9rem;
+  padding: 1rem 1rem;
   align-items: center;
   font-size: 18px;
   padding-top: 2rem;
   color: var(--color-gray);
+  border-bottom: 1px solid;
+  margin: 0 12rem;
 }
 
 .contact {
@@ -24,7 +26,6 @@ a {
   justify-content: center;
   align-items: center;
   margin: 3rem 0;
-  
 }
 
 .notepad-title {
